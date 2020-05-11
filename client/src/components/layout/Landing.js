@@ -6,9 +6,9 @@ const Landing = () => {
         <section className='landing'>
         <div className='dark-overlay'>
           <div className='landing-inner'>
-            <h1 className='x-large'>Developer Together</h1>
+            <h1 className='x-large'>iiSho</h1>
             <p className='lead'>
-                               Get noticed, together.
+                               Develop Together, Get Noticed Together.
                             </p>
                             <div className='buttons'>
             <Link to='/register' className='btn btn-primary'>
