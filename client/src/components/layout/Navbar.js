@@ -1,8 +1,8 @@
-import React , { Fragment }from 'react'
+import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import {logout} from '../../actions/auth';
+import { logout } from '../../actions/auth';
 
 const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
   const authLinks = (
@@ -65,4 +65,7 @@ const mapStateToProps = state => ({
   auth: state.auth
 });
 
-export default connect(mapStateToProps, { logout })(Navbar);
+export default connect(
+  mapStateToProps,
+  { logout }
+)(Navbar);
