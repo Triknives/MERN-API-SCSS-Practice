@@ -3,8 +3,8 @@ import Moment from 'react-moment';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
-const Experience = ({ experience }) => {
-    const experiences = experience.map(exp  => (
+const Education = ({ education }) => {
+    const educations = education.map(exp  => (
         <tr key={exp._id}>
             <td>{exp.company}</td>
             <td className="hide-sm">{exp.title}</td>
@@ -34,14 +34,14 @@ const Experience = ({ experience }) => {
                         <th />
                     </tr>
                 </thead>
-                <tbody>{experience}</tbody>
+                <tbody>{education}</tbody>
             </table>
         </Fragment>
     )
 }
 
 Education.propTypes = {
-    experience: PropTypes.array.isRequired,
-}
+    education: PropTypes.array.isRequired,
+};
 
-export default Experience;
+export default Education;

@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux';
 import { getCurrentProfile} from '../../actions/profile';
 import DashboardActions from './DashboardActions';
+import Experience from './Experience';
 import Spinner from '../layout/Spinner';
 
 
@@ -23,7 +24,8 @@ const Dashboard = ({getCurrentProfile, auth:{ user }, profile: {profile, loading
         </p>
         {profile !== null ? (
             <Fragment>
-                <DashboardActions />
+          <DashboardActions />
+          <Experience experience={profile.experience} />
             </Fragment>
          ) : (
             <Fragment>
