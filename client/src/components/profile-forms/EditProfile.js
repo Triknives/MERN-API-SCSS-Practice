@@ -1,4 +1,4 @@
-import React, {Fragment,useState, useEffect, Profiler} from 'react';
+import React, {Fragment,useState, useEffect} from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import {Link, withRouter} from 'react-router-dom';
@@ -39,7 +39,7 @@ const EditProfile = ({ profile: {profile, loading},createProfile, history}) => {
             instagram: loading || !profile.social ? ' ' : profile.social.instagram,
 
         });
-    }, [loading]);
+    }, [getCurrentProfile]);
 
     const [displaySocialInputs, toggleSocialInputs] = useState(false);
 
