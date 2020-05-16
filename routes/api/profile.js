@@ -123,25 +123,25 @@ router.get('/', async (req, res) => {
     }
 });
 
-// @route       Get api/profile/user/:user_id
-// @desc        Get profile by User ID
-// @access     Public
-
+// @route    GET api/profile/user/:user_id
+// @desc     Get profile by user ID
+// @access   Public
 router.get('/user/:user_id', async (req, res) => {
-    try {
-        const profile = await Profile.findOne({user: req.params.user_id}).populate('user', ['name', 'avatar']);
-        
-        if(!profile) 
-        return res.status(400).json({msg: 'Profile Not Found'});
+  try {
+    const profile = await Profile.findOne({
+      user: req.params.user_id
+    }).populate('user', ['name', 'avatar']);
 
-        res.json(profile);
-    } catch (err) {
-        console.error(err.message);
-        if (err.kind ==  'ObjectId') {
-            return res.status(400).json({msg: 'Profile Not Found'});
-        }
-        res.status(500).send('Server Error');
+    if (!profile) return res.status(400).json({ msg: 'Profile not found' });
+
+    res.json(profile);
+  } catch (err) {
+    console.error(err.message);
+    if (err.kind == 'ObjectId') {
+      return res.status(400).json({ msg: 'Profile not found' });
     }
+    res.status(500).send('Server Error');
+  }
 });
 // @route    DELETE api/profile
 // @desc     Delete profile, user & posts
