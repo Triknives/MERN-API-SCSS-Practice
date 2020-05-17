@@ -4,7 +4,7 @@
   "description": "Social Network practice",
   "main": "server.js",
   "scripts": {
-    "start": "start": "set NODE_ENV=production && node app" ,
+    "start": "set NODE_ENV=production && node app" ,
     "server": "nodemon server",
     "client": "cd client && npm start",
     "dev": "concurrently \"npm run client\" \"npm run server\"",
