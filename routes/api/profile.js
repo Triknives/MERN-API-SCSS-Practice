@@ -7,6 +7,7 @@ const User = require('../../models/User');
 const { check, validationResult } = require('express-validator');
 const request = require('request');
 const config = require('config');
+const normalizeUrl = require('normalize-url');
 
 
 
@@ -63,17 +64,18 @@ async (req, res) => {
       } = req.body;
 
       // Profile Object
-      const profileFields ={};
-        profileFields.user = req.user.id;
-        if(company) profileFields.company = company;
-        if(website) profileFields.website = website;
-        if(location) profileFields.location = location;
-        if(bio) profileFields.bio = bio;
-        if(status) profileFields.status = status;
-        if(githubusername) profileFields.githubusername = githubusername;
-        if(skills){
-            profileFields.skills = skills.split(',').map(skill => skill.trim());
-      }
+      const profileFields = {
+        user: req.user.id,
+        company,
+        location,
+        website: website === '' ? '' : normalizeUrl(website),
+        bio,
+        skills: Array.isArray(skills)
+          ? skills
+          : skills.split(',').map(skill => ' ' + skill.trim()),
+        status,
+        githubusername
+      };
 
       //build Social Object
       profileFields.social = {}
