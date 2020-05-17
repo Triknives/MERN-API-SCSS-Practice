@@ -1,0 +1,6 @@
+{
+    "mongoURI": "mongodb+srv://Admin:Admin123456@social-network-x5pbm.mongodb.net/test?retryWrites=true&w=majority",
+    "jwtSecret": "mysecrettoken",
+    "githubClientId":"a07279c795d7ffaacba2",
+    "githubSecret": "6525070171e21be1d4c1025f8879791197d3a997"
+}
