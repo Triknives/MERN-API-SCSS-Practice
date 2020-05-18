@@ -4,9 +4,9 @@
   "description": "Social Network practice",
   "main": "server.js",
   "scripts": {
-  "start": "node server",
-  "server": "nodemon server"
-},
+    "start": "node server",
+    "server": "nodemon server"
+  },
   "author": "Brett Cordell",
   "license": "MIT",
   "dependencies": {
